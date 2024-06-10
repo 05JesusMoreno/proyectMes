@@ -4,7 +4,7 @@
 }
 .container{
     border-radius: 2%;
-    background-color: rgb(14, 98, 233);
+    background-color: rgb(20, 20, 21);
     margin-bottom:15% ;
     margin-left: 7%;
     margin-right: 7%;
@@ -66,7 +66,6 @@ input{
 }
 .max{
     margin-left: 10.5%;
-    
 }
 .old{
     margin-left: 15.7%;
