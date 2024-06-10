@@ -4,7 +4,7 @@
 }
 .container{
     border-radius: 2%;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(14, 98, 233);
     margin-bottom:15% ;
     margin-left: 7%;
     margin-right: 7%;
@@ -20,7 +20,7 @@
 }
 video{
     display: block; /* Asegura que el botón se comporte como un bloque */
-    width: 640px; /* Ancho del video */
+    width: 40%; /* Ancho del video */
     margin: 0 auto; /* Centra horizontalmente el contenedor */
     text-align: center; /* Centra el video horizontalmente */
 }
@@ -37,7 +37,7 @@ h1{
 /*  estilos formulario*/
 
 label{
-    font-size: 2.5em;
+    font-size: 5vmin;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 10%;
 }
