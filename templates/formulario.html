@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos.css') }}">
+    <title>Prediccion de enfermedades cardiacas</title>
+    <script>
+        function ClasificarEnfermedad(event){
+            event.preventDefault();
+            const MaxHR  = document.getElementById('MaxHR').value;
+            const ST_Slope = document.getElementById('ST_Slope').value;
+            const Oldpeak = document.getElementById('Oldpeak').value;
+            const Cholesterol = document.getElementById('Cholesterol').value;
+
+            fetch('/predict',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/x-www-form-urlencoded',
+                },
+                body:`MaxHR=${MaxHR}&ST_Slope=${ST_Slope}&Oldpeak=${Oldpeak}&Cholesterol=${Cholesterol}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.error){
+                    document.getElementById('resultado').innerText = 'Error: ' + data.error;
+                }else{
+                    document.getElementById('resultado').innerText = 'Segun los datos ingresados el paciente se encuenta con: ' + data.categoria;
+                }
+            })
+            .catch(error =>{
+                document.getElementById('resultado').innerText = 'Error en la solicitud.';
+                console.error('Error:', error);
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="formulario">
+            <h1>Prediccion de enfermedad cardiovascular</h1>
+            <div class="video" >
+                <video src="{{ url_for('static', filename='gif.mp4') }}" controls autoplay muted loop type="video/mp4"></video>
+            </div>
+            <form id="formulario" onsubmit="ClasificarEnfermedad(event)">
+                <label for="MaxHR">F. Cardiaca Maxima</label>
+                <input class="max" type="text" name="MaxHR" id="MaxHR">
+                <br>
+                <label for="ST_Slope">Ejercicio maximo</label>
+                <select class="select" name="ST_Slope" id="ST_Slope">
+                    <option value="">selecciona una opcion</option>
+                    <option value="0.0">Descendiente</option>
+                    <option value="1.0">plano</option>
+                    <option value="2.0">Ascendiente</option>
+                </select>
+                <br>
+                <label for="Oldpeak">Depresión E. M.</label>
+                <input class="old" type="text" name="Oldpeak" id="Oldpeak">
+                <br>
+                <label for="Cholesterol">Colesterol</label>
+                <input class="chol" type="text" name="Cholesterol" id="Cholesterol">
+                <br>
+                <input class="btn" type="submit" value="enviar">
+                
+            </form>
+
+
+            <p class="res" id="resultado"></p>
+        </div>
+    </div>
+    
+</body>
+</html>

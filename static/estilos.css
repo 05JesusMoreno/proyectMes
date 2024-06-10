@@ -1,0 +1,87 @@
+*{
+    padding: 0.75%;
+    background-color:#626970;
+}
+.container{
+    border-radius: 2%;
+    background-color: rgb(10, 10, 10);
+    margin-bottom:15% ;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 5%;
+
+}
+.containerq{
+    background-color:#626970;
+    padding-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+video{
+    display: block; /* Asegura que el botón se comporte como un bloque */
+    width: 640px; /* Ancho del video */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    text-align: center; /* Centra el video horizontalmente */
+}
+h1{
+    text-align: center;
+    font-size: 55px;
+    text-shadow: 
+        -1px -1px 0 #eae5e5,  
+        1px -1px 0 #f4efef,
+        -1px 1px 0 #f4efef,
+        1px 1px 0 #f4efef;
+}
+
+/*  estilos formulario*/
+
+label{
+    font-size: 2.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10%;
+}
+.select{
+    width: 37%;
+    height: 30%;
+    font-size: 1.5em;
+    border-radius: 5px;
+    align-items: end;
+    margin-left: 14.5%;
+    border: 2px solid black; /* Cambia "border-color" a "border" */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+input{
+    width: 35%;
+    height: 25%;
+    font-size: 1.5em;
+    border-radius: 5px;
+    align-items: end;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    border: 2px solid black;
+}
+.max{
+    margin-left: 10.5%;
+    
+}
+.old{
+    margin-left: 15.7%;
+}
+.chol{
+    margin-left: 23.7%;
+}
+.btn{
+    display: block; /* Asegura que el botón se comporte como un bloque */
+    background-color: green;
+    margin: 0 auto; /* Centra horizontalmente el botón */
+    text-align: center; /* Centra el texto dentro del botón */
+}
+.res{
+    font-size: 2.5em;
+    align-items: center;
+    padding: 5%;
+}
